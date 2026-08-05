@@ -648,3 +648,16 @@ input:focus, textarea:focus, select:focus {
 
 .hidden { display: none !important; }
 
+/* Contención estricta para evitar desbordamientos al cambiar Zoom de pantalla */
+#cropperWrapperOCR {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  contain: layout inline-size;
+}
+
+.cropper-container {
+  max-width: 100% !important;
+}
+

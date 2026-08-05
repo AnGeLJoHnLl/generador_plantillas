@@ -35,6 +35,13 @@ function initOCRSimpleListeners() {
     const fileInput = document.getElementById('fileInputOCR');
     if (fileInput) fileInput.addEventListener('change', handleFileSelectOCR);
 
+    // Recalcular dimensiones de Cropper cuando cambia el zoom del navegador
+    window.addEventListener('resize', () => {
+        if (cropperSimple) {
+            cropperSimple.resize();
+        }
+    });
+
     // Pegado global Ctrl + V
     window.addEventListener('paste', (e) => {
         const items = (e.clipboardData || e.originalEvent.clipboardData).items;
